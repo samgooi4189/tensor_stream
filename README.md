@@ -207,8 +207,8 @@ cost.to_math # "(reduce_sum(|((((Placeholder: * weight) + bias) - Placeholder_2:
 breakpoints can also be set, block will be evaluated during computation
 
 ```ruby
-a = ts.constant([2,2])
-b = ts.constant([3,3])
+a = ts.constant([[2,2]])
+b = ts.constant([[3],[3]])
 
 f = ts.matmul(a, b).breakpoint! { |tensor, a, b, result_value| binding.pry }
 
